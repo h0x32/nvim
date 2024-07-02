@@ -23,7 +23,8 @@ return {
             javascript = { { "prettierd", "prettier" } },
         },
         -- Set up format-on-save
-        format_on_save = { timeout_ms = 500, lsp_fallback = true },
+        format_on_save = {},
+
     },
     init = function()
         -- If you want the formatexpr, here is the place to set it

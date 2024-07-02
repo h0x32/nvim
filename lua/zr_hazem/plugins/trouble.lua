@@ -1,31 +1,17 @@
 return {
-    "folke/trouble.nvim",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-        require("trouble").setup {
-            icons = true
-        }
-        vim.diagnostic.config({
-            virtual_text = false
-        })
-        vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", {
-            silent = true,
-            noremap = true
-        })
-        vim.keymap.set("n", "[d", function()
-            require("trouble").next({
-                skip_groups = true,
-                jump = true
-            })
-
-        end)
-        vim.keymap.set("n", "]d", function()
-            require("trouble").previous({
-                skip_groups = true,
-                jump = true
-            })
-        end)
-
-    end
+	"folke/trouble.nvim",
+	lazy = false,
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	keys = {
+		{
+			"<leader>xx",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Diagnostics (Trouble)",
+		},
+		{
+			"<leader>xX",
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "Buffer Diagnostics (Trouble)",
+		},
+	},
 }
